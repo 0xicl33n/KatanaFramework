@@ -17,6 +17,7 @@
 # - trying to make more elegant, isnt working.
 #########################################################HEAD#
 
+<<<<<<< HEAD
 #sudo apt-get update
 #sudo apt-get upgrade
 DEPS=''
@@ -44,6 +45,37 @@ if [grep -xq "Kali" /etc/issue]
 		echo $DEPS
 else:
 	echo "We aint on kali"
+=======
+
+if cat /etc/issue | grep -Fxq "Kali" | grep -Fxq "Debian"
+then
+	sudo apt-get update
+	if ! hash aircrack-ng 2>/dev/null; then 
+		sudo apt-get install --yes aircrack-ng
+	fi
+
+	if ! hash nmap 2>/dev/null; then 
+		sudo apt-get install --yes nmap
+	fi
+
+	if ! hash apache2 2>/dev/null; then 
+		sudo apt-get install --yes apache2
+		sudo apt-get install --yes php5
+		sudo apt-get install --yes libapache2-mod-php5
+	fi
+
+	if ! hash ettercap 2>/dev/null; then 
+		sudo apt-get install ettercap-text-only
+	fi
+
+	if ! hash dhcpd 2>/dev/null; then 
+		sudo apt-get install isc-dhcp-server
+	fi
+
+	if ! hash macchanger 2>/dev/null; then 
+		sudo apt-get install macchanger
+	fi
+>>>>>>> c4135eb2e8c7bc7cfae530a7b2bf435e845e7333
 fi
 #DIR=$(dirname $0)
 #cd $DIR/lib/scapy/
