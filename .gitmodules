@@ -1,0 +1,3 @@
+[submodule "paimei"]
+	path = paimei
+	url = https://github.com/OpenRCE/paimei
