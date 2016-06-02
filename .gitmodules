@@ -1,6 +1,6 @@
 [submodule "paimei"]
 	path = paimei
-	url = https://github.com/OpenRCE/paimei
+	url = https://github.com/Oxicl33n/paimei
 
 [submodule "pydbg"]
 	path = pydbg
