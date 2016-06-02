@@ -50,3 +50,5 @@ cd $DIR/lib/scapy/
 sudo python setup.py install
 cd $DIR/paimei/
 sudo python setup.py install
+cd $DIR/pydbg
+sud python setup.py install
