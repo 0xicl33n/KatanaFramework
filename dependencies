@@ -12,13 +12,18 @@
 # dhcpd for rogues AP
 #
 # 
-# Last Modified: 31/05/2016
+# Last Modified: 2/06/2016
+#
+# 0xicl33n notes:
+# - made more intelligent, looks for debian or kali before running apt
+# - added macchanger to list of dependancies (beta)
 #
 #########################################################HEAD#
 
-#sudo apt-get update
-#sudo apt-get upgrade
 
+if cat /etc/issue | grep -Fxq "Kali" | grep -Fxq "Debian"
+then
+	sudo apt-get update
 	if ! hash aircrack-ng 2>/dev/null; then 
 		sudo apt-get install --yes aircrack-ng
 	fi
@@ -40,6 +45,12 @@
 	if ! hash dhcpd 2>/dev/null; then 
 		sudo apt-get install isc-dhcp-server
 	fi
+
+	if ! hash macchanger 2>/dev/null; then 
+			sudo apt-get install macchanger
+	fi
+fi
+
 
 DIR=$(dirname $0)
 cd $DIR/lib/scapy/
