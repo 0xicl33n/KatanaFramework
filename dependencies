@@ -47,7 +47,7 @@ then
 	fi
 
 	if ! hash macchanger 2>/dev/null; then 
-			sudo apt-get install macchanger
+		sudo apt-get install macchanger
 	fi
 fi
 
