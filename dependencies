@@ -12,9 +12,14 @@
 # dhcpd for rogues AP
 #
 # 
+<<<<<<< HEAD
 # Last Modified: 2/06/2016
 # 0xicl33n:
 # - trying to make more elegant, isnt working.
+=======
+# Last Modified: 03/06/2016
+#
+>>>>>>> upstream/master
 #########################################################HEAD#
 
 
@@ -31,9 +36,15 @@ if [grep -xq "Kali" /etc/issue]
 			DEPS+="nmap "
 		fi
 
+<<<<<<< HEAD
 		if ! hash apache2 2>/dev/null; then 
 			DEPS+="apache2 php5 libapache2-mod-php5 "
 		fi
+=======
+	if ! hash apache2 2>/dev/null; then 
+		sudo apt-get install --yes apache2 php5 libapache2-mod-php5
+	fi
+>>>>>>> upstream/master
 
 		if ! hash ettercap 2>/dev/null; then 
 			DEPS+="ettercap-text-only " 
