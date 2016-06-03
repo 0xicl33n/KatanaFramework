@@ -1,7 +1,0 @@
-[submodule "pydbg"]
-	path = modules/pydbg
-	url = https://github.com/OpenRCE/pydbg
-
-[submodule "paimei"]
-	path = modules/paimei
-	url = https://github.com/0xicl33n/paimei
