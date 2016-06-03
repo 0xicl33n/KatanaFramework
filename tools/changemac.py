@@ -22,7 +22,7 @@ def randomMAC():
 
 first_re = re.compile(r'^\d{3}$')
 parser = optparse.OptionParser()
-parser.set_defaults(random=False,specific_mac=False)
+parser.set_defaults(random=False,specific_mac=False,print_help=True)
 parser.add_option('-R', action='store_true', dest='random')
 parser.add_option('-M', action='store_true', dest='specific_mac')
 parser.add_option('--help', action='store_true',dest='print_help')
