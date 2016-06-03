@@ -13,45 +13,47 @@
 #
 # 
 # Last Modified: 2/06/2016
+#
 # 0xicl33n:
-# - trying to make more elegant, isnt working.
-
+# - Simplified process. Added submodules
 # Last Modified: 03/06/2016
 #
 #########################################################HEAD#
 
 
-#sudo apt-get update
-#sudo apt-get upgrade
+
 DEPS=''
-if [grep -xq "Kali" /etc/issue]
-	then
-		if ! hash aircrack-ng 2>/dev/null; then 
-			DEPS+="aircrack-ng "
-		fi
 
-		if ! hash nmap 2>/dev/null; then 
-			DEPS+="nmap "
-		fi
-		
-		if ! hash apache2 2>/dev/null; then 
-			DEPS+="apache2 php5 libapache2-mod-php5 "
-		fi
+if ! hash aircrack-ng 2>/dev/null; then 
+	DEPS+="aircrack-ng "
+fi
+
+if ! hash nmap 2>/dev/null; then 
+	DEPS+="nmap "
+fi
+
+if ! hash apache2 2>/dev/null; then 
+	DEPS+="apache2 php5 libapache2-mod-php5 "
+fi
 
 
-		if ! hash ettercap 2>/dev/null; then 
-			DEPS+="ettercap-text-only " 
-		fi
+if ! hash ettercap 2>/dev/null; then 
+	DEPS+="ettercap-text-only " 
+fi
 
-		if ! hash dhcpd 2>/dev/null; then 
-			DEPS+="isc-dhcp-server "
-		fi
-		echo $DEPS
-else:
-	echo "We aint on kali"
+if ! hash dhcpd 2>/dev/null; then 
+	DEPS+="isc-dhcp-server "
+fi
+sudo apt-get update
+sudo apt-get install -y $DEPS wget unzip
+
 DIR=$(dirname $0)
 cd $DIR
 git submodule update --init --recursive
+cd $DIR/tmp
+wget https://github.com/secdev/scapy/archive/v2.3.1.zip
+unzip -o v2.3.1.zip -d $DIR/tmp/
+cp -r $DIR/tmp/scapy-2.3.1/ $DIR/lib/scapy
 cd $DIR/lib/scapy/
 sudo python setup.py install
 cd $DIR/py/paimei/

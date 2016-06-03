@@ -18,6 +18,8 @@ class init:
 	var         = {}
 	Arguments   = {
 
-		'var':[True ,'description'],
+		'p':[True ,'port'],
 	}
+	
+def Main():
 	
