@@ -1,3 +1,3 @@
-[submodule "py/paimei"]
+[submodule "lib/py/paimei"]
 	path = lib/py/paimei
 	url = https://github.com/0xicl33n/paimei
