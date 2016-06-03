@@ -1,59 +1,52 @@
-#!/usr/bin/env python
-from os import system as sysc
-import random
-import sys, re, optparse
-random.seed(1337)
+# :-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-: #
+# Katana Core import                  #
+from core.KATANAFRAMEWORK import *    #
+# :-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-: #
 
-if len(sys.argv)==1:
-    parser.print_help()
-    sys.exit(1)
-class TOOL:
-	self.author = "0xicl33n"
-	self.description = "Change mac"
-	def __main__:
-		print "Change mac for specified interface"
 
-def randomMAC():
-	mac = [ 0x00, 0x16, 0x3e,
-		random.randint(0x00, 0x7f),
-		random.randint(0x00, 0xff),
-		random.randint(0x00, 0xff) ]
-	return ':'.join(map(lambda x: "%02x" % x, mac))
+# LIBRARIES  
+from core.Function import checkDevice
+import random, sys, re, optparse, hashlib
+# END LIBRARIES 
+class init:
 
-first_re = re.compile(r'^\d{3}$')
-parser = optparse.OptionParser()
-parser.set_defaults(random=False,specific_mac=False,print_help=True)
-parser.add_option('-R', action='store_true', dest='random')
-parser.add_option('-M', action='store_true', dest='specific_mac')
-parser.add_option('--help', action='store_true',dest='print_help')
-if len(sys.argv)==1:
-    parser.print_help()
-    sys.exit(1)
+    Author      = "0xicl33n"
+    Description = "Changemac - change mac for interface"
+    var         = {}
+    Arguments   = {
 
-if options.print_help:
-	print '''
-	Changemac - change mac for interface
-	
-	Options:
-		 -R will use a random mac for specified interface
-		 -M will use a mac specified by the user
-	
-	Example:
+        'i':[True ,'interface to change mac'],
+        'm':[False,'specific mac'],
+        'r':[False,'ramdom mac']
+    }
 
-	ktf.tool -t changemac -R wlan1
-	ktf.tool -t changemac -M 00:00:00:00:00 wlan1
-	'''
-intf = sys.argv[3]
+def Main():
 
-def run(choice):
-	sysc('sudo airmon-ng check kill')
-	sysc('sudo ifconfig %s down') % intf
-	sysc('sudo ifconfig %s hw ether %s') %intf %choice
-	sysc('sudo ifconfig %s up') %intf 
+    picks = ['katana','k4tan4','KAtAn4','K4TanA','K4TaNA','KATANA','ANATAK','|<474/\/A']
+    a = hashlib.md5(random.choice(picks))
+    b = a.hexdigest()
+    as_int = int(b, 16)
+    random.seed(bin(as_int)[2:])
 
-if options.random:
-	r_mac = randomMAC()
-	run(r_mac)
+    mac = [ 0x00, 0x16, 0x3e,
+        random.randint(0x00, 0x7f),
+        random.randint(0x00, 0xff),
+        random.randint(0x00, 0xff) ]
 
-if options.specific_mac:
-	run(specific_mac)
+    MAC=""
+    if init.var['r'] == "enable":
+        MAC=':'.join(map(lambda x: "%02x" % x, mac))
+    if init.var['m'] != "null":
+        MAC=init.var['m']
+
+    if checkDevice(init.var['i']):
+        printAlert(0,"Changing MAC to "+init.var['i'])
+        printAlert(0,"MAC to Change "+MAC)
+
+        sysc("sudo airmon-ng check kill")
+        sysc("sudo ifconfig "+init.var['i']+" down")
+        sysc("sudo ifconfig "+init.var['i']+" hw ether") 
+        sysc("sudo ifconfig "+init.var['i']+" up") 
+        printAlert(1,"MAC Changed")
+        return
+    printAlert(1,"The interface "+init.var['i']+" Not exists")
