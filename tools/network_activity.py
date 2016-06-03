@@ -22,4 +22,5 @@ class init:
 	}
 	
 def Main():
+	pass
 	

@@ -8,6 +8,6 @@
 
 
 version="0.0.1.0"
-date="02/04/16:01/06/16"
-build="0059"
-Type="FREE"
+date="02/04/16:03/06/16"
+build="0059_0XICL33N"
+Type="DEV"
