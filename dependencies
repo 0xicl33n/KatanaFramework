@@ -45,7 +45,7 @@ if ! hash dhcpd 2>/dev/null; then
 	DEPS+="isc-dhcp-server "
 fi
 sudo apt-get update
-sudo apt-get install -y $DEPS wget unzip python-pip
+sudo apt-get install -y $DEPS wget unzip python-pip python-mysqldb
 DIR=$(dirname $0)
 cd $DIR
 git submodule update --init --recursive
@@ -65,5 +65,5 @@ pip install scapy==2.3.1
 #
 cd $DIR/lib/paimei/
 sudo python setup.py install
-cd $DIR/lib/pydbg/
-sud python setup.py install
+cd $DIR/lib/paimei/pydbg/
+sudo python setup.py install
