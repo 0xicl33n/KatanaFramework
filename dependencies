@@ -46,9 +46,11 @@ if [grep -xq "Kali" /etc/issue]
 else:
 	echo "We aint on kali"
 DIR=$(dirname $0)
+cd $DIR
+git submodule update --init --recursive
 cd $DIR/lib/scapy/
 sudo python setup.py install
-cd $DIR/paimei/
+cd $DIR/py/paimei/
 sudo python setup.py install
-cd $DIR/pydbg
+cd $DIR/py/pydbg
 sud python setup.py install
