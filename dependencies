@@ -45,18 +45,25 @@ if ! hash dhcpd 2>/dev/null; then
 	DEPS+="isc-dhcp-server "
 fi
 sudo apt-get update
-sudo apt-get install -y $DEPS wget unzip
-
+sudo apt-get install -y $DEPS wget unzip python-pip
 DIR=$(dirname $0)
 cd $DIR
 git submodule update --init --recursive
-cd $DIR/tmp
-wget https://github.com/secdev/scapy/archive/v2.3.1.zip
-unzip -o v2.3.1.zip -d $DIR/tmp/
-cp -r $DIR/tmp/scapy-2.3.1/ $DIR/lib/scapy
-cd $DIR/lib/scapy/
+#whois
+pip install python-whois
+#cd $DIR/tmp
+#rarfile
+#wget https://github.com/markokr/rarfile/archive/rarfile_2_7.zip
+pip install rarfile==2.7
+#scapy
+pip install scapy==2.3.1
+#wget https://github.com/secdev/scapy/archive/v2.3.1.zip
+#unzip -o v2.3.1.zip -d $DIR/tmp/
+#cp -r $DIR/tmp/scapy-2.3.1/ $DIR/lib/scapy
+#cd $DIR/lib/scapy/
+#sudo python setup.py install
+#
+cd $DIR/lib/paimei/
 sudo python setup.py install
-cd $DIR/py/paimei/
-sudo python setup.py install
-cd $DIR/py/pydbg/
+cd $DIR/lib/pydbg/
 sud python setup.py install
