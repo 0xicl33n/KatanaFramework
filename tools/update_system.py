@@ -17,5 +17,6 @@ class init:
 	Description = "Update Debian based system"
 	var         = {}
 	Arguments   = {'y'[True,'Assume yes and proceed with update']}
-	
-sysc('sudo apt-get update && sudo apt-get %s upgrade && sudo apt-get clean && sudo apt-get dist-upgrade %s') %init.var['y']
+
+def Main():
+	sysc('sudo apt-get update && sudo apt-get %s upgrade && sudo apt-get clean && sudo apt-get dist-upgrade %s') %init.var['y']
