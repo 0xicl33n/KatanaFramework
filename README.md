@@ -30,7 +30,6 @@ Installation of Katana framework:
 <i><b><br><br>
 	git clone https://github.com/PowerScript/KatanaFramework.git<br>
         cd KatanaFramework<br>
-        git submodule update --init --recursive<br>
         chmod 777 install<br>
         python install</i>
 </i></b>
