@@ -1,8 +1,19 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+# This Tool requires katana framework 
+# https://github.com/PowerScript/KatanaFramework
+
+# :-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-: #
+# Katana Core import                  #
+from core.KATANAFRAMEWORK import *    #
+# :-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-: #
+
+# LIBRARIES  
 from os import system as sysc
-class TOOL:
-	self.author = "0xicl33n"
-	self.description = "Restart network on linux"
-	def __main__:
-		print "This will restart the network connection on Kali Linux"
+# END LIBRARIES 
+class init:
+	
+	Author      = "0xicl33n"
+	Description = "Restart networking"
+	var         = {}
+	Arguments   = {}
 sysc('sudo networking restart')
