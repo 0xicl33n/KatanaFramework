@@ -69,3 +69,7 @@ if [ -e "$DIR/lib/paimei/pydbg" ]; then
 	cd $DIR/lib/paimei/pydbg/
 	sudo python setup.py install
 fi
+#copy manpages
+#sudo cp $DIR/doc/ktf.tool.1 /usr/local/share/man/man1/
+#sudo cp $DIR/doc/ktf.console.1 /usr/local/share/man/man1/
+#sudo mandb
