@@ -1,3 +1,6 @@
 [submodule "lib/paimei"]
 	path = lib/paimei
 	url = https://github.com/0xicl33n/paimei
+[submodule "lib/pr0cks"]
+	path = lib/pr0cks
+	url = https://github.com/n1nj4sec/pr0cks.git

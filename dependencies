@@ -51,15 +51,16 @@ if ! hash pip 2>/dev/null; then
 fi
 
 sudo apt-get update
-sudo apt-get install -y $DEPS python-mysqldb 
+sudo apt-get install -y $DEPS python-mysqldb tor
 
 sudo pip install python-whois
 sudo pip install rarfile==2.7
 sudo pip install scapy==2.3.1
+sudo pip install dnslib
 
 #compile manual
 
-#git submodule update --init --recursive
+git submodule update --init --recursive
 if [ -e "$DIR/lib/paimei/" ]; then
 	cd $DIR/lib/paimei/
 	sudo python setup.py install
@@ -69,7 +70,8 @@ if [ -e "$DIR/lib/paimei/pydbg" ]; then
 	cd $DIR/lib/paimei/pydbg/
 	sudo python setup.py install
 fi
+
 #copy manpages
-#sudo cp $DIR/doc/ktf.tool.1 /usr/local/share/man/man1/
-#sudo cp $DIR/doc/ktf.console.1 /usr/local/share/man/man1/
+#sudo cp $DIR/doc/mandb/ktf.tool.1 /usr/local/share/man/man1/
+#sudo cp $DIR/doc/mandb/ktf.console.1 /usr/local/share/man/man1/
 #sudo mandb

@@ -1,4 +1,0 @@
-#
-# Katana framework 
-# @Katana Upgrade
-#

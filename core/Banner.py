@@ -8,7 +8,7 @@
 
 from core import colors,Information
 from Function import get_number_modules,get_number_tools
-tema="Space...theme"
+tema="Space"
 
 print colors.B+"""
                    mM@@MM@@MM@@MM@@MM@@MM@@@MMMMM@@@@Mm              

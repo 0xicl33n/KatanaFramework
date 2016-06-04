@@ -17,4 +17,9 @@
         <filename>update_system</filename>
         <description>Update_system - invoke apt-get to update the linux system</description>
     </tool>
+     </tool>
+        <tool name="prox2ip">
+        <filename>prox2ip</filename>
+        <description>prox2ip - proxy a connection to a specific ip</description>
+    </tool>
 </tools>

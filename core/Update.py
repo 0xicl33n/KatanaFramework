@@ -8,7 +8,7 @@
 # and proceeds to download and install.
 #
 # 
-# Last Modified: 24/05/2016
+# Last Modified: 4/06/2016
 #
 #########################################################HEAD#
 
@@ -46,9 +46,9 @@ def update():
 			printAlert(3,"katana already updated.\n")
 		else:
 			printAlert(0,"Downloading Last Version")
-			subprocess.Popen("cd /tmp;git clone https://github.com/PowerScript/KatanaFramework.git;cp -R /tmp/KatanaFramework/* /usr/share/KatanaFramework/;rm -rf /tmp/KatanaFramework/*", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).wait()
-			subprocess.Popen("cd /usr/share/KatanaFramework/core;sudo python Upgrade.py", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).wait()
+			subprocess.Popen("git clone https://github.com/PowerScript/KatanaFramework.git /tmp/katana && cp -R /tmp/katana/* /usr/share/KatanaFramework/ && rm -rf /tmp/katana/*", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).wait()
 			printAlert(0,"Upgrading.")
+			subprocess.Popen("cp -R /tmp/katana/* /usr/share/KatanaFramework/ && rm -rf /tmp/katana", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).wait()
 			printAlert(3,"Katana framework was Updated.\n")
 		return
 
