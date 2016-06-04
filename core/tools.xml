@@ -4,4 +4,17 @@
         <filename>change_mac</filename>
         <description>Changemac - change mac for interface.</description>
     </tool>
+    <tool name="lsproc">
+        <filename>lsproc</filename>
+        <description>Lsproc - list processes.</description>
+    </tool>
+        <tool name="restart_network">
+        <filename>restart_network</filename>
+        <description>Restart_network - restarts the network connections.</description>
+    </tool>
+     </tool>
+        <tool name="update_system">
+        <filename>update_system</filename>
+        <description>Update_system - invoke apt-get to update the linux system</description>
+    </tool>
 </tools>

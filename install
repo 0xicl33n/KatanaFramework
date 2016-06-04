@@ -68,4 +68,4 @@ print "    ["+time.strftime('%c')+"]Creating Shortcuts.    ",status_cmd(Shortcut
 print "    ["+time.strftime('%c')+"]Extracting Files.      ",status_cmd(Files,                      )
 print "    ["+time.strftime('%c')+"]Giving privileges.     ",status_cmd('chmod -R -c 777 /usr/share/KatanaFramework/')
 
-print "\n    Done, Now u are allright for the action. !!!\n"
+print "\n    Done! Your sword has been forged!\n"

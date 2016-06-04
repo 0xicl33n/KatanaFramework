@@ -1,0 +1,47 @@
+
+NAME
+	ktf.console - Katana Framework
+
+DESCRIPTION
+	The Katana Framework is the sword a good pentester can put to use, it does this with modules. 
+	If the modules have a shorter way of being called (like showm instead of 'show modules'), it is listed in () after the name of the module
+	show modules(showm) - Show modules
+
+BASIC USAGE
+	show options(sop) - Show options module
+	show full options(sfop) - Show full options module
+	use - Use module 
+	getinfo - Show information of module
+	set - Change value of a parameter
+	back - Go back
+	run - run Module
+	update(u) - Update framework
+	exit(x) - Exit of framework
+	help(h) - Show help
+	clear(c) - Clear screen
+
+INTERNAL MODULES
+	s:: - Save Variable
+	x:: - Execute System Commands
+	f:: - Execute Functions
+
+
+
+FUNCTIONS
+	can be called with 'f::',They allow the user to do more complex things from within the framework. 
+	If the function has arguments, they are listed after the().
+	
+	get_aps() Interface, timeout - Scan Access point's
+	get_interfaces() - Get Network Interfaces
+	get_monitors_mode() - Get Monitor Interfaces Wireless
+	start_monitor() Interface - Start Monitor Mode in Interface
+	get_local_ip() - Get local IP
+	get_external_ip() - Get External IP
+	get_gateway() - Get Gateway/Router IP
+
+EXAMPLE
+	f::Functions(Parameters)   <-->  f::get_aps(mon0,10)
+	f::Functions               <-->  f::get_local_ip
+
+SEE ALSO
+	ktf.run

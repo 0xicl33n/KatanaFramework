@@ -46,10 +46,6 @@ fi
 
 #utils
 
-if ! hash wget 2>/dev/null; then 
-	DEPS+="wget "
-fi
-
 if ! hash pip 2>/dev/null; then 
 	DEPS+="python-pip "
 fi
